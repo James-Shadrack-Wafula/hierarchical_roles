@@ -1,0 +1,17 @@
+<!-- templates/manager_list.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manager List</title>
+</head>
+<body>
+    <h2>Manager List</h2>
+    <ul>
+        {% for manager in managers %}
+            <li>{{ manager.name }} - {{ manager.email }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
