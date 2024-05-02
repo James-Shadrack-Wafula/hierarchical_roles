@@ -12,6 +12,12 @@ from .forms import CustomUserCreationForm, ManagerForm, SellerForm
 
 from django.shortcuts import render
 
+def index(request):
+    if request.user.is_authenticated:
+        return redirect('dashboard')
+    else:
+        return redirect('login')
+
 @login_required
 def admin_dashboard(request):
     return render(request, 'admin_dashboard.html', {'user': request.user})
