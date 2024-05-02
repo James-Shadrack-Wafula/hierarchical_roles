@@ -1,4 +1,5 @@
 # Hierarchical Roles
+<<<<<<< HEAD
 
 Hierarchical Roles (Auth Sys) is an Authentication system with Hierarchical Roles
 
@@ -64,3 +65,5 @@ password: `@person123`
 If you register for the first time as a seller you should not be able to see the Seller Dashbord untill you are commissioned by the Manager or Admin.
 
 ![1714650348433](images/README/1714650348433.png)
+=======
+>>>>>>> 28e7d4fb0298cc0679180aba37970c0a667b22aa
