@@ -1,5 +1,4 @@
 # Hierarchical Roles
-<<<<<<< HEAD
 
 Hierarchical Roles (Auth Sys) is an Authentication system with Hierarchical Roles
 
