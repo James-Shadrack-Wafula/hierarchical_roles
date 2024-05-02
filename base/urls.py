@@ -8,6 +8,12 @@ urlpatterns = [
     path('dashboard/', views.dashboard, name='dashboard'),
     path('add_seller/', views.add_seller, name='add_seller'),
     path('add_manager/', views.add_manager, name='add_manager'),
+    path('manager_list/', views.manager_list, name='manager_list'),
     path('seller_list/', views.seller_list, name='seller_list'),
-    # Add more URLs as needed for additional functionalities
+    path('update_seller/', views.update_seller, name='update_seller'),
+    path('update_manager/', views.update_manager, name='update_manager'),
+    path('admin_dashboard/', views.admin_dashboard, name='admin_dashboard'),
+    path('update_manager/<int:manager_id>/', views.update_manager, name='update_manager'),
+    path('update_seller/<int:seller_id>/', views.update_seller, name='update_seller'),
+  
 ]

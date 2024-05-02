@@ -1,17 +1,36 @@
-<!-- templates/manager_list.html -->
+{% extends 'main.html' %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manager List</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .list-container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+    </style>
 </head>
 <body>
-    <h2>Manager List</h2>
-    <ul>
-        {% for manager in managers %}
-            <li>{{ manager.name }} - {{ manager.email }}</li>
-        {% endfor %}
-    </ul>
+    {% block content %}
+    <div class="container">
+        <div class="list-container">
+            <h2>Manager List</h2>
+            <ul class="list-group">
+                {% for manager in managers %}
+                    <li class="list-group-item">{{ manager.user.username }} - {{ manager.user.email }} <a href="{% url 'update_manager' manager_id=manager.user.id %}">Update Manager</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    {% endblock %}
 </body>
 </html>
+

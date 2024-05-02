@@ -1,14 +1,29 @@
 <!-- authentication/templates/admin_dashboard.html -->
+{% extends 'main.html' %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Add custom styles here if needed */
+    </style>
 </head>
 <body>
-    <h2>Welcome to Admin Dashboard</h2>
-    <p>Hello, {{ user.username }}!</p>
-    <!-- Add admin-specific functionality here -->
+    {% block content%}
+    <div class="container">
+        <h2>Welcome to Admin Dashboard</h2>
+        <p>Hello, {{ user.username }}!</p>
+        <div class="mt-4">
+            <a href="{% url 'add_seller' %}" class="btn btn-primary me-3">Add Seller</a>
+            <a href="{% url 'add_manager' %}" class="btn btn-success">Add Manager</a>
+        </div>
+    </div>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    {% endblock %}
 </body>
 </html>
+

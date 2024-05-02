@@ -1,5 +1,49 @@
 <!-- templates/update_manager.html -->
+{% extends 'main.html' %}
 <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seller Dashboard</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Add custom styles here if needed */
+        .dashboard-container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+{% block content %}
+    <div class="container">
+        <!-- <div class="dashboard-container">
+            <h2>Update Manager</h2>
+            <p>Hello, {{ user.username }}!</p>
+        </div> -->
+        <div class="form-container">
+            <h2>Update Manager</h2>
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-primary">Update</button>
+            </form>
+        </div>
+    </div>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Add your custom scripts here if needed -->
+{% endblock %}
+</body>
+</html>
+
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -14,4 +58,4 @@
         <button type="submit">Update Manager</button>
     </form>
 </body>
-</html>
+</html> -->

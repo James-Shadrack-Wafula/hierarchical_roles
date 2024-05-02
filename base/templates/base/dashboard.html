@@ -1,15 +1,43 @@
-<!-- authentication/templates/dashboard.html -->
+{% extends 'main.html' %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Add custom styles here if needed */
+    </style>
 </head>
-<body>
-    <h2>Welcome to Your Dashboard</h2>
-    <p>Hello, {{ user.username }}!</p>
-    <a href="{% url 'add_seller' %}"><button>Add Seller</button></a>
-    <a href="{% url 'add_manager' %}"><button>Add Manager</button></a>
+
+<body class="bg-light">
+    {% block content%}
+    {% if not_s == True or massage %}
+    <div class="alert alert-warning" role="alert">
+        {{massage}}
+      </div>
+    {% endif %}
+    {% if message %}
+    <div class="alert alert-warning" role="alert">
+        This is a warning alert—check it out!
+      </div>
+    {% endif %}
+    <div class="container py-5">
+        <h2 class="mb-4">Welcome to Your Dashboard</h2>
+        <p>Hello, {{ user.username }}!</p>
+        <!-- <div class="mt-4">
+            <a href="{% url 'add_seller' %}" class="btn btn-primary me-3">Add Seller</a>
+            <a href="{% url 'add_manager' %}" class="btn btn-success">Add Manager</a>
+        </div> -->
+    </div>
+    <!-- Bootstrap JS (optional) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    {% endblock %}
 </body>
+
 </html>
+
+
+

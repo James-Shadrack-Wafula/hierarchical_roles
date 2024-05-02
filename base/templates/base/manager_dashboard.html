@@ -1,14 +1,36 @@
-<!-- authentication/templates/manager_dashboard.html -->
+{% extends 'main.html' %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manager Dashboard</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .dashboard-container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+    </style>
 </head>
 <body>
-    <h2>Welcome to Manager Dashboard</h2>
-    <p>Hello, {{ user.username }}!</p>
-    <!-- Add manager-specific functionality here -->
+    {% block content %}
+    <div class="container">
+        <div class="dashboard-container">
+            <h2>Welcome to Manager Dashboard</h2>
+            <p>Hello, {{ user.username }}!</p>
+            <div class="mt-4">
+                <a href="{% url 'add_seller' %}" class="btn btn-primary me-3">Add Seller</a>
+            </div>
+        </div>
+    </div>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    {% endblock %}
 </body>
 </html>
+
+
